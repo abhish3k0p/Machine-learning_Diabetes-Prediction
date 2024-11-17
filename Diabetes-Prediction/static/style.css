@@ -19,9 +19,8 @@ body{
   margin-top: 50px;
   max-width: 660px;
   position: relative;
-  border: 7px solid transparent; /* Create space for the border */
-  background-clip: padding-box; /* Ensure the background doesn't overlap the border */
-  /* border-image: linear-gradient(45deg, #ff0000, #ffa500, #ffff00, #00ff00, #0000ff, #4b0082, #ee82ee) 1; */ 
+  /* border: 7px solid transparent; */ /* Create space for the border */
+  background-clip: padding-box; 
   border:3px solid #e0e0e0;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -319,16 +318,27 @@ footer {
   }
 }
 
+@media (min-width: 1025px) { /* Laptop and larger screens */
+  .cards-container {
+    gap: 70px; /* Increased spacing for laptops and larger */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) { /* Tablet view */
+  .cards-container {
+    gap: 30px; /* Reduced spacing for tablets */
+  }
+}
+
 .cards-container {
   display: flex;
   justify-content: center;
-  gap: 425px; /* Adjust this value for spacing */
+  flex-wrap: wrap; /* Allows wrapping for smaller screens */
+  gap: 400px; /* Default spacing for mobile view */
 }
-.cards-container .flip-card:nth-child(1) {
-  margin-left: 40px; /* Adjust this value to move the first card to the right */
-}
-
-
+ .cards-container .flip-card:nth-child(1) {
+  margin-left: 40px; 
+} 
 
 .flip-card {
   background-color: transparent;
